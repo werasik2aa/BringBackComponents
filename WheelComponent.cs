@@ -17,7 +17,7 @@ namespace BringBackComponents
             }
             return request;
         }
-        public static bool AddComponent(Transform Wheel) { if (Wheel.gameObject.AddComponent<WheelCollider>()) return true; else return false; }
+        public static Component AddComponent(Transform Wheel) { Component o = Wheel.gameObject.AddComponent<WheelCollider>(); if (o) return o; else return null; }
         public static bool Set_SteerAngle(Transform Wheel, float Value)
         {
             if (GetComponent(Wheel))
