@@ -24,10 +24,10 @@ namespace BringBackComponents
         public float sprungMass;
         public Vector3 center;
         public float rpm;
-        public delegate void ConfigureVehicleSubsteps(float speedThreshold, int stepsBelowThreshold, int stepsAboveThreshold);
-        public delegate void GetWorldPose(IntPtr position, IntPtr quaternion);
-        public delegate Vector3 get_center(IntPtr position);
-        public delegate void set_center(IntPtr ptr, Vector3 Value);
+        public delegate void ConfigureVehicleSubsteps(IntPtr ptr, ref float speedThreshold, ref int stepsBelowThreshold, ref int stepsAboveThreshold);
+        public delegate void GetWorldPose(IntPtr ptr, out Vector3 ptr2, out Quaternion ptr3);
+        public delegate Vector3 get_center(IntPtr ptr, out Vector3 ptr2);
+        public delegate void set_centerS(IntPtr ptr, Vector3 Value);
         public delegate WheelFrictionCurve get_forwardFriction(IntPtr ptr); //FORWARD FR
         public delegate void set_forwardFriction(IntPtr ptr, WheelFrictionCurve Value);
         public delegate WheelFrictionCurve get_sidewaysFriction(IntPtr ptr); //SIDEWAY FR

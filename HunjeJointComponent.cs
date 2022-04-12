@@ -23,14 +23,14 @@ namespace BringBackComponents
         {
             JointLimits g = new JointLimits();
             if (GetComponent(Wheel))
-                return ResolveICall<HingeJoint.get_limits>("UnityEngine.HingeJoint::get_limits").Invoke(GetComponent(Wheel).Pointer);
+                return ResolveICall<HingeJoint.get_limits>("UnityEngine.HingeJoint::get_limits_Injected").Invoke(GetComponent(Wheel).Pointer);
             return g;
         }
         public static bool Set_JointLimits(Transform Wheel, JointLimits Value)
         {
             if (GetComponent(Wheel))
             {
-                ResolveICall<HingeJoint.set_limits>("UnityEngine.HingeJoint::set_motorTorque").Invoke(GetComponent(Wheel).Pointer, Value);
+                ResolveICall<HingeJoint.set_limits>("UnityEngine.HingeJoint::set_limits_Injected").Invoke(GetComponent(Wheel).Pointer, Value);
                 return true;
             }
             return false;
@@ -39,14 +39,14 @@ namespace BringBackComponents
         {
             JointMotor g = new JointMotor();
             if (GetComponent(Wheel))
-                return ResolveICall<HingeJoint.get_motor>("UnityEngine.HingeJoint::get_motor").Invoke(GetComponent(Wheel).Pointer);
+                return ResolveICall<HingeJoint.get_motor>("UnityEngine.HingeJoint::get_motor_Injected").Invoke(GetComponent(Wheel).Pointer);
             return g;
         }
         public static bool Set_JointMotor(Transform Wheel, JointMotor Value)
         {
             if (GetComponent(Wheel))
             {
-                ResolveICall<HingeJoint.set_motor>("UnityEngine.HingeJoint::set_motorTorque").Invoke(GetComponent(Wheel).Pointer, Value);
+                ResolveICall<HingeJoint.set_motor>("UnityEngine.HingeJoint::set_motor_Injected").Invoke(GetComponent(Wheel).Pointer, Value);
                 return true;
             }
             return false;
@@ -55,14 +55,14 @@ namespace BringBackComponents
         {
             JointSpring g = new JointSpring();
             if (GetComponent(Wheel))
-                return ResolveICall<HingeJoint.get_spring>("UnityEngine.HingeJoint::get_spring").Invoke(GetComponent(Wheel).Pointer);
+                return ResolveICall<HingeJoint.get_spring>("UnityEngine.HingeJoint::get_spring_Injected").Invoke(GetComponent(Wheel).Pointer);
             return g;
         }
         public static bool Set_Spring(Transform Wheel, JointSpring Value)
         {
             if (GetComponent(Wheel))
             {
-                ResolveICall<HingeJoint.set_spring>("UnityEngine.HingeJoint::set_spring").Invoke(GetComponent(Wheel).Pointer, Value);
+                ResolveICall<HingeJoint.set_spring>("UnityEngine.HingeJoint::set_spring_Injected").Invoke(GetComponent(Wheel).Pointer, Value);
                 return true;
             }
             return false;
